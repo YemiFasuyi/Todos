@@ -20,6 +20,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7522C525-2737-4B8B-B6E7-D692ABF2E4DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{405E2031-85D3-44E7-83C6-49D670BEE342}"
+	ProjectSection(SolutionItems) = preProject
+		docs\ReadMe.md = docs\ReadMe.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todos.API.Tests", "tests\Todos.API.Tests\Todos.API.Tests.csproj", "{C6EB1E61-D8FC-41C3-AFB1-D3DB2C04FEEE}"
 EndProject
