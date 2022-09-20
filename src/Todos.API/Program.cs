@@ -4,6 +4,7 @@ using Microsoft.Net.Http.Headers;
 using Todos.Application.Interfaces;
 using Todos.Application.Repositories;
 using Todos.Application.Todos.Queries;
+using Todos.Orchestrator.Todos.Commands;
 using Todos.Orchestrator.Todos.Models;
 using Todos.Orchestrator.Todos.Queries;
 using Todos.Persistance;
@@ -48,6 +49,14 @@ app.MapGet("/todoItems", async (IMediator mediator) =>
         is List<TodoItemViewModel> todoItems
         ? Results.Ok(todoItems)
         : Results.NoContent();
+});
+
+app.MapPost("/todoItem", async (IMediator mediator, CreateTodoItemCommand command) =>
+{
+    return await mediator.Send(command)
+        is int id
+        ? Results.Ok(id)
+        : Results.BadRequest();
 });
 
 app.Run();
