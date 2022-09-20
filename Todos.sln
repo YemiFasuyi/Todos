@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32714.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Web", "src\Todos.Web\Todos.Web.csproj", "{FCD231E8-45AB-4D40-AD3F-DE0272D2AC67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todos.Web", "src\Todos.Web\Todos.Web.csproj", "{FCD231E8-45AB-4D40-AD3F-DE0272D2AC67}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{36D6EB5E-4E70-4E5C-9D8A-B6B4253B7658}"
 EndProject
@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7522C525
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{405E2031-85D3-44E7-83C6-49D670BEE342}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.API.Tests", "tests\Todos.API.Tests\Todos.API.Tests.csproj", "{C6EB1E61-D8FC-41C3-AFB1-D3DB2C04FEEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todos.API.Tests", "tests\Todos.API.Tests\Todos.API.Tests.csproj", "{C6EB1E61-D8FC-41C3-AFB1-D3DB2C04FEEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

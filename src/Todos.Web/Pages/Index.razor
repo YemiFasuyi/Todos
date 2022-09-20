@@ -1,10 +1,14 @@
 ﻿@page "/"
+@using Todos.Web.Pages.Components
 
 @inherits IndexBase
 
 <MudGrid>
     <MudItem xs="12" sm="12" md="6">
         <MudTable Items="PendingTodoItems" Context="item">
+            <ToolBarContent>
+                <MudIconButton Icon="@Icons.Filled.Add" aria-label="Add" Class="ml-auto" OnClick="AddNew" />
+            </ToolBarContent>
             <HeaderContent>
                 <MudTh> Pending items</MudTh>
             </HeaderContent>
@@ -18,6 +22,9 @@
     </MudItem>
     <MudItem xs="12" sm="12" md="6">
         <MudTable Items="CompletedTodoItems" Context="item">
+            <ToolBarContent>
+                <MudIconButton Icon="@Icons.Filled.Add" aria-label="Add" Class="ml-auto" OnClick="AddNew" />
+            </ToolBarContent>
             <HeaderContent>
                 <MudTh>Completed items</MudTh>
             </HeaderContent>
@@ -30,3 +37,7 @@
         </MudTable>
     </MudItem>
 </MudGrid>
+
+<AddNewTodoItemDrawer IsDrawerOpen="IsAddNewDrawerOpened"
+                      IsDrawerOpenChanged="NewDrawerOpenedChanged"
+                      OnSave="_ => OnTodoItemSavedAsync(_)" />
