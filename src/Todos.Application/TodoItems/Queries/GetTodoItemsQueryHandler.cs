@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using Todos.Application.Interfaces;
-using Todos.Orchestrator.Todos.Models;
-using Todos.Orchestrator.Todos.Queries;
+using Todos.Orchestrator.TodoItems.Models;
+using Todos.Orchestrator.TodoItems.Queries;
 
-namespace Todos.Application.Todos.Queries;
+namespace Todos.Application.TodoItems.Queries;
 
 public class GetTodoItemsQueryHandler : IRequestHandler<GetTodoItemsQuery, List<TodoItemViewModel>?>
 {

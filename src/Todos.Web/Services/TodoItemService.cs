@@ -1,6 +1,6 @@
 ﻿using System.Net.Http.Json;
-using Todos.Orchestrator.Todos.Commands;
-using Todos.Orchestrator.Todos.Models;
+using Todos.Orchestrator.TodoItems.Commands;
+using Todos.Orchestrator.TodoItems.Models;
 
 namespace Todos.Web.Services;
 

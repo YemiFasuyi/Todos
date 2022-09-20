@@ -2,8 +2,8 @@ using System.Net;
 using System.Net.Http.Json;
 using Microsoft.Extensions.DependencyInjection;
 using Todos.Domain.TodoItems;
-using Todos.Orchestrator.Todos.Commands;
-using Todos.Orchestrator.Todos.Models;
+using Todos.Orchestrator.TodoItems.Commands;
+using Todos.Orchestrator.TodoItems.Models;
 using Todos.Persistance;
 
 namespace Todos.API.Tests;
@@ -43,5 +43,33 @@ public class TodoItemsEndpointTests
 
         Assert.Equal(HttpStatusCode.OK, result.StatusCode);
         Assert.True(id > 0);
+    }
+
+    [Fact]
+    public async void UpdateTodoItemStatusTest()
+    {
+        await using var app = new TestApplicationFactory();
+
+        var todoItem = new CreateTodoItemCommand
+        {
+            Description = "TodoItem",
+        };
+
+        var client = app.CreateClient();
+        var createResult = await client.PostAsJsonAsync("/todoItem", todoItem);
+
+        _ = int.TryParse(await createResult.Content.ReadAsStringAsync(), out int id);
+
+
+        var updateResult = await client.PostAsJsonAsync("/todoItem/status", new UpdateTodoItemStatusCommand
+        {
+            Id = id,
+            Status = TodoItemStatus.Completed,
+        });
+
+        _ = bool.TryParse(await updateResult.Content.ReadAsStringAsync(), out bool success);
+
+        Assert.Equal(HttpStatusCode.OK, updateResult.StatusCode);
+        Assert.True(success);
     }
 }

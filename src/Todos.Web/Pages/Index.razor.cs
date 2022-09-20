@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Todos.Orchestrator.Todos.Models;
+using Todos.Orchestrator.TodoItems.Models;
 using Todos.Web.Services;
 
 namespace Todos.Web.Pages;

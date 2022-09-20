@@ -1,6 +1,6 @@
-﻿namespace Todos.Orchestrator.Todos.Models;
+﻿namespace Todos.Orchestrator.TodoItems.Models;
 
 public enum TodoItemStatus
 {
-    Pending, Completed
+    Pending = 1, Completed
 }

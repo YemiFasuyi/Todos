@@ -2,5 +2,5 @@
 
 public enum TodoItemStatusEnum
 {
-    Pending, Completed
+    Pending = 1, Completed
 }

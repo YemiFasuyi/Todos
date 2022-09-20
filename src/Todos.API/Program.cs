@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Net.Http.Headers;
 using Todos.Application.Interfaces;
 using Todos.Application.Repositories;
-using Todos.Application.Todos.Queries;
-using Todos.Orchestrator.Todos.Commands;
-using Todos.Orchestrator.Todos.Models;
-using Todos.Orchestrator.Todos.Queries;
+using Todos.Application.TodoItems.Queries;
+using Todos.Orchestrator.TodoItems.Commands;
+using Todos.Orchestrator.TodoItems.Models;
+using Todos.Orchestrator.TodoItems.Queries;
 using Todos.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -51,11 +51,27 @@ app.MapGet("/todoItems", async (IMediator mediator) =>
         : Results.NoContent();
 });
 
+app.MapGet("/todoItem", async (IMediator mediator, int id) =>
+{
+    return await mediator.Send(new GetTodoItemQuery { Id = id })
+        is TodoItemViewModel todoItem
+        ? Results.Ok(todoItem)
+        : Results.NoContent();
+});
+
 app.MapPost("/todoItem", async (IMediator mediator, CreateTodoItemCommand command) =>
 {
     return await mediator.Send(command)
         is int id
         ? Results.Ok(id)
+        : Results.BadRequest();
+});
+
+app.MapPost("/todoItem/status", async (IMediator mediator, UpdateTodoItemStatusCommand command) =>
+{
+    return await mediator.Send(command)
+        is bool result
+        ? Results.Ok(result)
         : Results.BadRequest();
 });
 

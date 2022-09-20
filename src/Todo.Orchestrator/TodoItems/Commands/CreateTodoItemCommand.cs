@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 
-namespace Todos.Orchestrator.Todos.Commands;
+namespace Todos.Orchestrator.TodoItems.Commands;
 
 public class CreateTodoItemCommand : IRequest<int>
 {

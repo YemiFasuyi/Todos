@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Todos.Application.Interfaces;
-using Todos.Orchestrator.Todos.Commands;
+using Todos.Orchestrator.TodoItems.Commands;
 
-namespace Todos.Application.Todos.Commands;
+namespace Todos.Application.TodoItems.Commands;
 
 public class CreateTodoItemsCommandHandler : IRequestHandler<CreateTodoItemCommand, int>
 {
