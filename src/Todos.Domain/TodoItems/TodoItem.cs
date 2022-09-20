@@ -1,4 +1,4 @@
-﻿namespace Todos.Domain;
+﻿namespace Todos.Domain.TodoItems;
 
 public class TodoItem : BaseEntity
 {

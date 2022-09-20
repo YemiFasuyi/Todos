@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Todos.Application.Interfaces;
-using Todos.Domain;
+using Todos.Domain.TodoItems;
 using Todos.Persistance;
 
-namespace Todos.Application.Services;
+namespace Todos.Application.Repositories;
 
 public class TodoItemRepository : ITodoItemRepository
 {

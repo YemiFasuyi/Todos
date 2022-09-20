@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Todos.Domain;
+using Todos.Domain.TodoItems;
 
 namespace Todos.Persistance;
 
@@ -7,6 +7,7 @@ public class TodoDbContext : DbContext, ITodoDbContext
 {
     public TodoDbContext(DbContextOptions<TodoDbContext> options) : base(options)
     {
+        Database.EnsureCreated();
     }
 
     public DbSet<TodoItem> TodoItems => Set<TodoItem>();

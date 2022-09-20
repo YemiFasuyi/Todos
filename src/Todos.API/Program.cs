@@ -1,7 +1,8 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 using Todos.Application.Interfaces;
-using Todos.Application.Services;
+using Todos.Application.Repositories;
 using Todos.Application.Todos.Queries;
 using Todos.Orchestrator.Todos.Models;
 using Todos.Orchestrator.Todos.Queries;
@@ -18,6 +19,19 @@ builder.Services.AddDbContext<ITodoDbContext, TodoDbContext>(o => o.UseInMemoryD
 builder.Services.AddScoped<ITodoItemRepository, TodoItemRepository>();
 builder.Services.AddMediatR(typeof(GetTodoItemsQuery).Assembly, typeof(GetTodoItemsQueryHandler).Assembly);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DefaultCors",
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:44398")
+                  .AllowAnyMethod()
+                  .AllowAnyHeader()
+                  .WithHeaders(HeaderNames.ContentType, HeaderNames.Authorization, "x-custom-header")
+                  .AllowCredentials();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,6 +39,8 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
+
+app.UseCors("DefaultCors");
 
 app.MapGet("/todoItems", async (IMediator mediator) =>
 {
@@ -35,3 +51,5 @@ app.MapGet("/todoItems", async (IMediator mediator) =>
 });
 
 app.Run();
+
+public partial class Program { }

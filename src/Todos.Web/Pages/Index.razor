@@ -1,7 +1,32 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+@inherits IndexBase
 
-<MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
-<MudText Class="mb-8">Welcome to your new app, powered by MudBlazor!</MudText>
-<MudAlert Severity="Severity.Normal">You can find documentation and examples on our website here: <MudLink Href="https://mudblazor.com" Typo="Typo.body2" Color="Color.Inherit"><b>www.mudblazor.com</b></MudLink></MudAlert>
+<MudGrid>
+    <MudItem xs="12" sm="12" md="6">
+        <MudTable Items="PendingTodoItems" Context="item">
+            <HeaderContent>
+                <MudTh> Pending items</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Name">@item.Description</MudTd>
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager />
+            </PagerContent>
+        </MudTable>
+    </MudItem>
+    <MudItem xs="12" sm="12" md="6">
+        <MudTable Items="CompletedTodoItems" Context="item">
+            <HeaderContent>
+                <MudTh>Completed items</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Name">@item.Description</MudTd>
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager />
+            </PagerContent>
+        </MudTable>
+    </MudItem>
+</MudGrid>

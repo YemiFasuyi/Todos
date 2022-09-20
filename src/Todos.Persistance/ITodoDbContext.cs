@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Todos.Domain;
+using Todos.Domain.TodoItems;
 
 namespace Todos.Persistance;
 
