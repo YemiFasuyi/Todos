@@ -34,4 +34,14 @@ public class TodoItemService
         _ = int.TryParse(await response.Content.ReadAsStringAsync(), out int result);
         return result;
     }
+
+    public async Task<bool> UpdateTodoItemStatusAsync(UpdateTodoItemStatusCommand command)
+    {
+        var response = await _client.PostAsJsonAsync("/todoItem/status", command);
+        if (!response.IsSuccessStatusCode)
+            return false;
+
+        _ = bool.TryParse(await response.Content.ReadAsStringAsync(), out bool result);
+        return result;
+    }
 }

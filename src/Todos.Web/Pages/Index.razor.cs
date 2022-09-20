@@ -12,6 +12,8 @@ public class IndexBase : ComponentBase
     protected List<TodoItemViewModel>? CompletedTodoItems { get; set; }
     protected bool IsLoading { get; set; }
     protected bool IsAddNewDrawerOpened { get; set; }
+    protected bool IsEditDrawerOpened { get; set; }
+    protected int CurrentTodoItemId { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -35,13 +37,25 @@ public class IndexBase : ComponentBase
         IsAddNewDrawerOpened = true;
     }
 
+    protected void Edit(int id)
+    {
+        CurrentTodoItemId = id;
+        IsEditDrawerOpened = true;
+    }
+
     protected void NewDrawerOpenedChanged(bool isOpen)
     {
         IsAddNewDrawerOpened = isOpen;
         StateHasChanged();
     }
 
-    protected async Task OnTodoItemSavedAsync(int id)
+    protected void EditDrawerOpenedChanged(bool isOpen)
+    {
+        IsEditDrawerOpened = isOpen;
+        StateHasChanged();
+    }
+
+    protected async Task OnTodoItemSavedAsync()
     {
         await PopulateTodoItemsAsync();
     }
