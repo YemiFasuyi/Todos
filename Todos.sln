@@ -3,19 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32714.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Web", "Todos.Web\Todos.Web.csproj", "{FCD231E8-45AB-4D40-AD3F-DE0272D2AC67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Web", "src\Todos.Web\Todos.Web.csproj", "{FCD231E8-45AB-4D40-AD3F-DE0272D2AC67}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{36D6EB5E-4E70-4E5C-9D8A-B6B4253B7658}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Orchestrator", "Todo.Orchestrator\Todos.Orchestrator.csproj", "{5F4FF1B6-D273-4059-A5E1-51F6764E1F22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todos.Orchestrator", "src\Todo.Orchestrator\Todos.Orchestrator.csproj", "{5F4FF1B6-D273-4059-A5E1-51F6764E1F22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Domain", "Todos.Domain\Todos.Domain.csproj", "{8AE6CA9D-D118-47C6-9075-F7F0A8BF64E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todos.Domain", "src\Todos.Domain\Todos.Domain.csproj", "{8AE6CA9D-D118-47C6-9075-F7F0A8BF64E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Application", "Todos.Application\Todos.Application.csproj", "{5EF50E1C-E86B-4CAC-A162-E5184DF7C73B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todos.Application", "src\Todos.Application\Todos.Application.csproj", "{5EF50E1C-E86B-4CAC-A162-E5184DF7C73B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Persistance", "Todos.Persistance\Todos.Persistance.csproj", "{D1D818EA-A505-4561-8D52-949DF847CB93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todos.Persistance", "src\Todos.Persistance\Todos.Persistance.csproj", "{D1D818EA-A505-4561-8D52-949DF847CB93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.API", "Todos.API\Todos.API.csproj", "{9F2BF470-C9A7-4FDB-AEB0-814BB5DE1838}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todos.API", "src\Todos.API\Todos.API.csproj", "{9F2BF470-C9A7-4FDB-AEB0-814BB5DE1838}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7522C525-2737-4B8B-B6E7-D692ABF2E4DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{405E2031-85D3-44E7-83C6-49D670BEE342}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
